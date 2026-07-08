@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiMail, FiPhone, FiSend, FiCheckCircle, FiArrowUpRight } from 'react-icons/fi';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
-
+import emailjs from "@emailjs/browser";
 const CONTACT_CARDS = [
   {
     icon: FiMail,
@@ -38,17 +38,40 @@ export default function Contact() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setStatus('sending');
-    // Wire this up to your form backend of choice (Formspree, EmailJS, a serverless
-    // function, etc). Simulated here so the interaction is demo-ready out of the box.
-    setTimeout(() => {
-      setStatus('sent');
-      setForm({ name: '', email: '', subject: '', message: '' });
-      setTimeout(() => setStatus('idle'), 3500);
-    }, 1200);
-  };
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  setStatus("sending");
+
+  try {
+    await emailjs.send(
+      "service_983xbgo",
+      "template_gtp10ex",
+      {
+        name: form.name,
+        email: form.email,
+        subject: form.subject,
+        message: form.message,
+      },
+      "WQK-FxmuDs76h_Q-j"
+    );
+
+    setStatus("sent");
+
+    setForm({
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    });
+
+    setTimeout(() => setStatus("idle"), 3500);
+
+  } catch (error) {
+    console.error("EmailJS Error:", error);
+    alert("Failed to send message. Please try again.");
+    setStatus("idle");
+  }
+};
 
   return (
     <section id="contact" className="section-shell">
