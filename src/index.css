@@ -159,100 +159,6 @@ textarea:focus-visible {
   .light .underline-input { @apply border-ink-900/15 text-ink-900; }
 }
 
-/* ==========================================================================
-   Custom cursor (desktop only) — HUD-style reticle
-   ========================================================================== */
-@media (pointer: fine) {
-  body { cursor: none; }
-}
-
-.cursor-dot, .cursor-ring, .cursor-glow {
-  position: fixed; top: 0; left: 0;
-  pointer-events: none; z-index: 9999;
-  will-change: transform;
-}
-
-/* Soft ambient glow that lags furthest behind, like a trailing energy field */
-.cursor-glow {
-  width: 220px; height: 220px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(242,84,12,0.14) 0%, rgba(242,84,12,0) 65%);
-  transform: translate(-50%, -50%);
-  transition: opacity 0.3s ease;
-  mix-blend-mode: screen;
-}
-
-/* Core dot with a tight neon glow */
-.cursor-dot {
-  width: 5px; height: 5px; border-radius: 50%;
-  background: #FF7A3D;
-  box-shadow: 0 0 6px 1px rgba(242, 84, 12, 0.9), 0 0 16px 4px rgba(242, 84, 12, 0.35);
-  transform: translate(-50%, -50%);
-  transition: transform 0.12s ease, background 0.2s ease;
-}
-
-/* Reticle ring — rotated square "target lock" frame with corner ticks */
-.cursor-ring {
-  width: 30px; height: 30px;
-  border: 1px solid rgba(242, 84, 12, 0.55);
-  border-radius: 6px;
-  transform: translate(-50%, -50%) rotate(45deg);
-  transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1), height 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-    border-color 0.25s ease, border-radius 0.25s ease, background 0.25s ease;
-  animation: cursor-spin 8s linear infinite;
-  background: rgba(242, 84, 12, 0.03);
-}
-.cursor-ring::before {
-  content: '';
-  position: absolute;
-  inset: -8px;
-  border: 1px dashed rgba(242, 84, 12, 0.25);
-  border-radius: inherit;
-  animation: cursor-spin-reverse 12s linear infinite;
-}
-
-/* Corner ticks — small crosshair marks that flare outward on hover */
-.cursor-tick {
-  position: absolute;
-  background: rgba(242, 84, 12, 0.8);
-  transition: transform 0.25s ease, opacity 0.25s ease;
-}
-.cursor-tick-t, .cursor-tick-b { width: 1px; height: 6px; left: 50%; transform: translateX(-50%); }
-.cursor-tick-l, .cursor-tick-r { height: 1px; width: 6px; top: 50%; transform: translateY(-50%); }
-.cursor-tick-t { top: -10px; }
-.cursor-tick-b { bottom: -10px; }
-.cursor-tick-l { left: -10px; }
-.cursor-tick-r { right: -10px; }
-
-.cursor-ring.cursor-hover {
-  width: 58px; height: 58px;
-  border-radius: 50%;
-  background: rgba(242, 84, 12, 0.08);
-  border-color: rgba(242, 84, 12, 0.95);
-  animation-play-state: paused;
-}
-.cursor-ring.cursor-hover .cursor-tick-t { transform: translate(-50%, -6px); }
-.cursor-ring.cursor-hover .cursor-tick-b { transform: translate(-50%, 6px); }
-.cursor-ring.cursor-hover .cursor-tick-l { transform: translate(-6px, -50%); }
-.cursor-ring.cursor-hover .cursor-tick-r { transform: translate(6px, -50%); }
-
-.cursor-ring.cursor-click {
-  width: 22px; height: 22px;
-  border-color: #FF7A3D;
-  background: rgba(242, 84, 12, 0.2);
-}
-
-@keyframes cursor-spin {
-  from { transform: translate(-50%, -50%) rotate(45deg); }
-  to { transform: translate(-50%, -50%) rotate(405deg); }
-}
-@keyframes cursor-spin-reverse {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(-360deg); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .cursor-ring, .cursor-ring::before { animation: none; }
-}
 
 /* ==========================================================================
    Hero profile photo — plain circle, thin ring, single floating badge
@@ -313,4 +219,32 @@ textarea:focus-visible {
   background: currentColor;
   opacity: 0.4;
   animation: blink 1.6s ease-in-out infinite;
+}
+/* Professional Hover Effects */
+
+a,
+button,
+.card,
+.project-card,
+.nav-link,
+.social-icon {
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        color 0.25s ease,
+        background-color 0.25s ease;
+}
+
+a:hover,
+button:hover,
+.card:hover,
+.project-card:hover,
+.nav-link:hover,
+.social-icon:hover {
+    transform: translateY(-3px);
+}
+
+button:active,
+a:active {
+    transform: scale(0.98);
 }

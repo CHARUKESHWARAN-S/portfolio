@@ -17,7 +17,7 @@ const STATS = [
   { value: 2, suffix: '+', label: 'Projects Built' },
   { value: 15, suffix: '+', label: 'Tech Stack' },
   { value: 4, suffix: '', label: 'Focus Areas' },
-  { value: 999, suffix: '+', label: 'Coffee Cups' },
+  { value: 8, suffix: '+', label: 'Certifications' },
 ];
 
 function StatCounter({ value, suffix, inView }) {

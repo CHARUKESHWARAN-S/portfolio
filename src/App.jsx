@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { ThemeProvider } from './context/ThemeContext';
 import Loader from './components/Loader';
-import CustomCursor from './components/CustomCursor';
 import ScrollProgress from './components/ScrollProgress';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -25,7 +24,6 @@ export default function App() {
   return (
     <ThemeProvider>
       <Loader isLoading={isLoading} />
-      <CustomCursor />
       <ScrollProgress />
       <Navbar />
 
