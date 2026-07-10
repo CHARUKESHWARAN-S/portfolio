@@ -4,7 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import { FiDownload, FiMail, FiArrowUpRight } from 'react-icons/fi';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { useTypedText } from '../hooks/useTypedText';
-import profilePhoto from '../assets/images/profile.jpeg';
+import profilePhoto from '../assets/images/profile.png';
 
 const ROLES = [
   'Aspiring Data Scientist',
