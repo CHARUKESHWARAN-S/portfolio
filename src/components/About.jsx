@@ -77,8 +77,8 @@ export default function About() {
         >
           <p className="text-base leading-relaxed text-mist-300 light:text-ink-700">
             I am an Artificial Intelligence and Data Science graduate passionate about
-            building intelligent solutions using Machine Learning, Computer Vision, Data
-            Analytics, and Full Stack Development. I enjoy solving real-world problems
+            building intelligent solutions using Machine Learning, Computer Vision, and Data
+            Analytics. I enjoy solving real-world problems
             through AI-driven applications and continuously learning emerging technologies.
           </p>
           <p className="mt-4 text-base leading-relaxed text-mist-400">

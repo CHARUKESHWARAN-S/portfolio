@@ -71,9 +71,7 @@ export default function Hero() {
           </div>
 
           <p className="mt-6 max-w-xl text-base leading-relaxed text-mist-300 sm:text-lg light:text-ink-700">
-            AI &amp; Data Science graduate building intelligent solutions with Machine
-            Learning, Computer Vision, and Full-Stack Development. I turn data into
-            products that solve real-world problems.
+            AI &amp; Data Science graduate passionate about transforming data into meaningful insights using SQL, Python, Excel, and Power BI. I analyze data, create interactive dashboards, and uncover trends to support data-driven decision-making and solve real-world business problems.
           </p>
 
           <div className="mt-9 flex flex-wrap items-center gap-5">
