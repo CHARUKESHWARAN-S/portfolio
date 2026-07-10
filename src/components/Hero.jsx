@@ -62,7 +62,7 @@ export default function Hero() {
           </span>
 
           <h1 className="mt-6 font-display text-4xl font-semibold leading-[1.08] tracking-tight text-mist-50 sm:text-5xl lg:text-6xl light:text-ink-900">
-            Charukeshwaran Suresh.
+            Charukeshwaran Suresh
           </h1>
 
           <div className="mt-4 flex h-8 items-center font-mono text-lg text-brand sm:text-xl">
