@@ -20,7 +20,7 @@ const CATEGORIES = [
     skills: [
       { name: 'Python', icon: SiPython },
       { name: 'JavaScript', icon: SiJavascript },
-      { name: 'SQL', icon: SiMysql },
+      
     ],
   },
   {
