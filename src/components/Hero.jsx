@@ -8,9 +8,7 @@ import profilePhoto from '../assets/images/profile.png';
 
 const ROLES = [
   'Aspiring Data Scientist',
-  'Machine Learning Engineer',
-  'Computer Vision Developer',
-  'Full Stack Developer',
+
 ];
 
 const STATS = [
