@@ -19,7 +19,6 @@ const CATEGORIES = [
     headerIcon: FiCode,
     skills: [
       { name: 'Python', icon: SiPython },
-      { name: 'Java', icon: SiOpenjdk },
       { name: 'JavaScript', icon: SiJavascript },
       { name: 'SQL', icon: SiMysql },
     ],
@@ -32,7 +31,6 @@ const CATEGORIES = [
       { name: 'CSS', icon: SiCss },
       { name: 'React.js', icon: SiReact },
       { name: 'Node.js', icon: SiNodedotjs },
-      { name: 'Express.js', icon: SiExpress },
     ],
   },
   {
